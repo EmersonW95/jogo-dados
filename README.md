@@ -35,4 +35,4 @@ Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
 ## Publicado na Web
 
-Acesse [acesso o jogo](https://jogo-dados-evakha90s-emerson-willian.vercel.app) e confira!
+[Jogue agora mesmo](https://jogo-dados-phi.vercel.app/)
