@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --verde-feltro: #0f3d2e;
+  --verde-feltro-escuro: #0a2b20;
+  --creme: #fbf7ef;
+  --dourado: #d4af37;
+  --tinta: #1c1c1c;
+  --tinta-suave: #4a4a4a;
+  --vermelho-suave: #b3462c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--tinta);
+  background: radial-gradient(ellipse at top, var(--verde-feltro) 0%, var(--verde-feltro-escuro) 70%);
+  min-height: 100vh;
+}
+
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.jogo-dados {
+  width: 100%;
+  max-width: 460px;
+  background: var(--creme);
+  border-radius: 24px;
+  padding: 32px 28px 28px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.titulo {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 0 0 4px;
+  color: var(--verde-feltro);
+}
+
+.rodada {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--vermelho-suave);
+  margin: 0 0 24px;
+}
+
+.jogadores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  position: relative;
+}
+
+.jogadores::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 50%;
+  width: 1px;
+  background: rgba(28, 28, 28, 0.12);
+}
+
+.jogador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.jogador h2 {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+  color: var(--tinta);
+}
+
+.dados {
+  display: flex;
+  gap: 8px;
+}
+
+.dado {
+  width: 64px;
+  height: 64px;
+  display: block;
+}
+
+.botao-jogar {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--verde-feltro);
+  color: var(--creme);
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.botao-jogar:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: var(--verde-feltro-escuro);
+}
+
+.botao-jogar:disabled {
+  background: #d8d2c4;
+  color: #928c7c;
+  cursor: not-allowed;
+}
+
+.botao-jogar:focus-visible,
+.botao-novamente:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 2px;
+}
+
+.mensagem {
+  margin-top: 26px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(15, 61, 46, 0.08);
+  border: 1px solid rgba(15, 61, 46, 0.18);
+  font-weight: 600;
+  text-align: center;
+  color: var(--verde-feltro);
+  min-height: 20px;
+}
+
+.mensagem-final {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--verde-feltro);
+  color: var(--creme);
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  text-align: center;
+}
+
+.botao-novamente {
+  display: block;
+  margin: 16px auto 0;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 26px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--dourado);
+  color: var(--tinta);
+  transition: transform 0.12s ease;
+}
+
+.botao-novamente:hover {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .botao-jogar,
+  .botao-novamente {
+    transition: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .dado {
+    width: 52px;
+    height: 52px;
+  }
+
+  .jogo-dados {
+    padding: 24px 18px 20px;
+  }
+}
